@@ -21,7 +21,7 @@ A GPU-based efficient pipeline for dexterous grasp synthesis built on [cuRobo](h
 conda create -n bodex python=3.10
 conda activate bodex
 
-conda install pytorch==2.2.2 pytorch-cuda=12.1 -c pytorch -c nvidia 
+conda install pytorch==2.2.2 pytorch-cuda=12.1 -c pytorch -c nvidia #or use pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 for cuda 11.8
 
 pip install -e . --no-build-isolation  
 
@@ -34,6 +34,7 @@ pip install numpy==1.26.4
 
 cd src/curobo/geom/cpp
 python setup.py install    # install coal_openmp_wrapper
+conda install -c conda-forge hpp-fcl
 ```
 
 3. **Prepare object assets**: Download our pre-processed object assets `DGN_obj_processed.zip` and `DGN_obj_split.zip` from [here](https://huggingface.co/datasets/JiayiChenPKU/BODex) and organize the unzipped folders as below. Alternatively, new object assets can be pre-processed using [MeshProcess](https://github.com/JYChen18/MeshProcess).
